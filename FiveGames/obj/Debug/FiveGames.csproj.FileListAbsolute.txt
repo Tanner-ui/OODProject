@@ -1,0 +1,10 @@
+C:\Users\DSU\source\repos\FiveGames\bin\Debug\FiveGames.exe.config
+C:\Users\DSU\source\repos\FiveGames\bin\Debug\FiveGames.exe
+C:\Users\DSU\source\repos\FiveGames\bin\Debug\FiveGames.pdb
+C:\Users\DSU\source\repos\FiveGames\obj\Debug\FiveGames.csproj.AssemblyReference.cache
+C:\Users\DSU\source\repos\FiveGames\obj\Debug\FiveGames.Game_Menu.resources
+C:\Users\DSU\source\repos\FiveGames\obj\Debug\FiveGames.Properties.Resources.resources
+C:\Users\DSU\source\repos\FiveGames\obj\Debug\FiveGames.csproj.GenerateResource.cache
+C:\Users\DSU\source\repos\FiveGames\obj\Debug\FiveGames.csproj.CoreCompileInputs.cache
+C:\Users\DSU\source\repos\FiveGames\obj\Debug\FiveGames.exe
+C:\Users\DSU\source\repos\FiveGames\obj\Debug\FiveGames.pdb
