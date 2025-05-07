@@ -14,18 +14,7 @@
         <Member type="Method">public void Launch_2048()</Member>
         <Member type="Method">public void Launch_tictactoe()</Member>
         <Member type="Method">public void Launch_Sudoku()</Member>
-        <Member type="Method">public void Launch_Crossword()</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
-        <Name>HangMan</Name>
-        <Access>Public</Access>
-        <Location left="68" top="360" />
-        <Size width="162" height="216" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">Str Current_Word</Member>
-        <Member type="Field">Char Array</Member>
-        <Member type="Method">public Bool CheckLetter()</Member>
+        <Member type="Constructor">public Menu()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -37,59 +26,138 @@
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>tictactoe</Name>
+        <Name>tictactoeForm</Name>
         <Access>Public</Access>
-        <Location left="455" top="360" />
-        <Size width="162" height="216" />
+        <Location left="633" top="360" />
+        <Size width="162" height="366" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">Void Board</Member>
-        <Member type="Field">int Turn</Member>
-        <Member type="Method">public void Click_Events()</Member>
-        <Member type="Method">public void Win_Event()</Member>
+        <Member type="Field">public int random2</Member>
+        <Member type="Field">private int xWins</Member>
+        <Member type="Field">private int oWins</Member>
+        <Member type="Constructor">public tictactoeForm()</Member>
+        <Member type="Method">private void tl_Click(object sender, eventargs e)</Member>
+        <Member type="Method">private void tm_Click()</Member>
+        <Member type="Method">private void tr_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void ml_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void mm_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void mr_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void bl_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void bm_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void br_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void restart_Click(object sender, evantargs e)</Member>
+        <Member type="Method">public void check()</Member>
+        <Member type="Method">public void text(int x)</Member>
+        <Member type="Method">protected override string GetFormattedScore()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Sudoku</Name>
         <Access>Public</Access>
-        <Location left="640" top="360" />
-        <Size width="162" height="216" />
+        <Location left="843" top="360" />
+        <Size width="162" height="281" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">int Board</Member>
-        <Member type="Method">public Bool Column_Check()</Member>
-        <Member type="Method">public Bool Row_Check()</Member>
-        <Member type="Method">public Bool Square_Check()</Member>
+        <Member type="Field">private int[,] currentBoard = new int[9,9]</Member>
+        <Member type="Field">private DateTime startTime</Member>
+        <Member type="Method">private void StartTimer()</Member>
+        <Member type="Constructor">public Sudoku()</Member>
+        <Member type="Method">protected override string getFormatedScore()</Member>
+        <Member type="Method">private void sudokuFormLoad(object sender, EventArgs c)</Member>
+        <Member type="Method">private void LoadPuzzleToFrid(string puzzles)</Member>
+        <Member type="Method">private void TextBoxTextChanged(object sender, eventargs c)</Member>
+        <Member type="Method">private string getControlName(int index)</Member>
+        <Member type="Method">private void updateBoardFromControl(TextBox textBox, int Value)</Member>
+        <Member type="Method">private void PrintCurrentBoard()</Member>
+        <Member type="Method">private void checkButtonClick(pbject sender, evenargs e)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Crossword</Name>
+        <Name>HangManForm</Name>
         <Access>Public</Access>
-        <Location left="831" top="360" />
+        <Location left="68" top="360" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int gamesWon = 0</Member>
+        <Member type="Field">private int gamesLost = 0</Member>
+        <Member type="Constructor">public HangManForm()</Member>
+        <Member type="Method">public void startnewgame()</Member>
+        <Member type="Method">public void buttnguessclick(object sender, eventargs e)</Member>
+        <Member type="Method">public void burronrestartclick(object sender, eventargs e)</Member>
+        <Member type="Method">public void updatedisplay()</Member>
+        <Member type="Method">public void updatehangmanimage(int stage)</Member>
+        <Member type="Method">public void updateguessedletters()</Member>
+        <Member type="Method">public void checkgamestatus()</Member>
+        <Member type="Method">protected override string getformattedscore()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HangManData</Name>
+        <Access>Public</Access>
+        <Location left="74" top="663" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private list&lt;string&gt; words = new List&lt;string&gt;()</Member>
+        <Member type="Field">private string selectedWord</Member>
+        <Member type="Field">private char displayWord</Member>
+        <Member type="Field">private List&lt;char&gt; guessedLetters = new List&lt;char&gt;()</Member>
+        <Member type="Field">private int incorrctGuesses = 0</Member>
+        <Member type="Field">private const int maxincorrectguesses = 6</Member>
+        <Member type="Field">public string DisplayWord = new string(displayWord)</Member>
+        <Member type="Field">public int IncorectGuesses = incorrectGuesses</Member>
+        <Member type="Field">public int MaxIncorrectGuesses = maxIncorrectGuesses</Member>
+        <Member type="Field">public bool IsGameOver = incorrectGuesses = maxIncorrectGuesses</Member>
+        <Member type="Field">public bool IsGameWon = DisplayWord = selectedWord</Member>
+        <Member type="Field">public string SelectedWord = selectedWord</Member>
+        <Member type="Field">public List&lt;char&gt; GuessedLetters = guessedLetters</Member>
+        <Member type="Method">public void StartNewGame()</Member>
+        <Member type="Method">public void LoadWordsFromFile()</Member>
+        <Member type="Method">public bool ProcessGuess(char guess)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>tictactoeData</Name>
+        <Access>Public</Access>
+        <Location left="638" top="765" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">int Board</Member>
-        <Member type="Field">Str Clumn_Words</Member>
-        <Member type="Field">int Row_Words</Member>
-        <Member type="Method">public void Check_Word()</Member>
+        <Member type="Field">public static int[] arr = new int[9]</Member>
+        <Member type="Field">public static int turn = 1</Member>
+        <Member type="Field">public static int turnNum = 0</Member>
+        <Member type="Field">public static bool gameover = false</Member>
+        <Member type="Field">Random random = new Random()</Member>
+        <Member type="Field">public int random1</Member>
+        <Member type="Method">public void X(int x)</Member>
+        <Member type="Method">public void O()</Member>
         <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SudokuData</Name>
+        <Access>Public</Access>
+        <Location left="846" top="697" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private list&lt;string&gt; puzzles = new list&lt;string&gt;()</Member>
+        <Member type="Field">private random rand = new Random()</Member>
+        <Member type="Constructor">public SudokuData(string filePath)</Member>
+        <Member type="Method">private void LoadPuzzles(string filePath)</Member>
+        <Member type="Method">public string GetRandomPuzzle()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GameBase</Name>
+        <Access>Public</Access>
+        <Location left="542" top="1052" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected Label scoreLabel</Member>
+        <Member type="Method">public void setScoreLaber(Label label)</Member>
+        <Member type="Method">public void updateScoreDisplay()</Member>
+        <Member type="Method">protected abstract string getFormattedScore()</Member>
+        <Modifier>Abstract</Modifier>
       </Entity>
     </Entities>
     <Containers />
     <Relationships>
       <Relationship type="Association" first="0" second="1">
-        <Label>
-        </Label>
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Vertical</EndOrientation>
-        <BendPoint relativeToStartShape="False">
-          <X>151</X>
-          <Y>328</Y>
-        </BendPoint>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-      </Relationship>
-      <Relationship type="Association" first="0" second="2">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -99,41 +167,119 @@
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="0" second="3">
-        <Label>
-        </Label>
+      <Relationship type="Association" first="0" second="2">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>536</X>
+          <X>714</X>
+          <Y>335</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>644</X>
+          <Y>204</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>929</X>
           <Y>335</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="0" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>151</X>
+          <Y>328</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="4" second="5">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>726</X>
-          <Y>335</Y>
+          <X>153</X>
+          <Y>638</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="0" second="5">
+      <Relationship type="Association" first="2" second="6">
         <Label>
         </Label>
-        <StartOrientation>Horizontal</StartOrientation>
+        <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
-          <X>913</X>
-          <Y>335</Y>
+          <X>711</X>
+          <Y>738</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>21</X>
+          <Y>547</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>495</X>
+          <Y>1195</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>820</X>
+          <Y>688</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>740</X>
+          <Y>1173</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1037</X>
+          <Y>535</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>729</X>
+          <Y>1175</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="1" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>248</X>
+          <Y>520</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>497</X>
+          <Y>1195</Y>
+        </BendPoint>
       </Relationship>
     </Relationships>
   </ProjectItem>
