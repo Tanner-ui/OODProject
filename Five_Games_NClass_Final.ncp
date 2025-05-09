@@ -1,0 +1,417 @@
+<Project>
+  <Name>Five_Games</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.ClassDiagram" assembly="NClass.DiagramEditor, Version=2.8.0.1, Culture=neutral, PublicKeyToken=null">
+    <Name>Menu</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Menu</Name>
+        <Access>Public</Access>
+        <Location left="455" top="96" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void Launch_Hangman()</Member>
+        <Member type="Method">public void Launch_2048()</Member>
+        <Member type="Method">public void Launch_tictactoe()</Member>
+        <Member type="Method">public void Launch_Sudoku()</Member>
+        <Member type="Constructor">public Menu()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>_2048Form</Name>
+        <Access>Public</Access>
+        <Location left="273" top="360" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Game oGame</Member>
+        <Member type="Field">private Graphics gGraphics</Member>
+        <Member type="Field">private Graphics gG</Member>
+        <Member type="Field">private Bitmap bBackground</Member>
+        <Member type="Constructor">public _2048Form()</Member>
+        <Member type="Method">public void UpdateGame()</Member>
+        <Member type="Method">public void Draw(Graphics g)</Member>
+        <Member type="Method">private void timer1_Tick(object sender, EventArgs e)</Member>
+        <Member type="Method">private void Form1_KeyDown(object sender, KeyEventArgs e)</Member>
+        <Member type="Method">private void Form1_KeyUp(object sender, KeyEventArgs e)</Member>
+        <Member type="Method">private void Main_Load(object sender, EventArgs e)</Member>
+        <Member type="Method">private void Main_MouseClick(object sender, MouseEventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>tictactoeForm</Name>
+        <Access>Public</Access>
+        <Location left="633" top="360" />
+        <Size width="162" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public int random2</Member>
+        <Member type="Field">private int xWins</Member>
+        <Member type="Field">private int oWins</Member>
+        <Member type="Constructor">public tictactoeForm()</Member>
+        <Member type="Method">private void tl_Click(object sender, eventargs e)</Member>
+        <Member type="Method">private void tm_Click()</Member>
+        <Member type="Method">private void tr_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void ml_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void mm_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void mr_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void bl_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void bm_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void br_Click(object sender, evantargs e)</Member>
+        <Member type="Method">private void restart_Click(object sender, evantargs e)</Member>
+        <Member type="Method">public void check()</Member>
+        <Member type="Method">public void text(int x)</Member>
+        <Member type="Method">protected override string GetFormattedScore()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Sudoku</Name>
+        <Access>Public</Access>
+        <Location left="843" top="360" />
+        <Size width="162" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int[,] currentBoard = new int[9,9]</Member>
+        <Member type="Field">private DateTime startTime</Member>
+        <Member type="Method">private void StartTimer()</Member>
+        <Member type="Constructor">public Sudoku()</Member>
+        <Member type="Method">protected override string getFormatedScore()</Member>
+        <Member type="Method">private void sudokuFormLoad(object sender, EventArgs c)</Member>
+        <Member type="Method">private void LoadPuzzleToFrid(string puzzles)</Member>
+        <Member type="Method">private void TextBoxTextChanged(object sender, eventargs c)</Member>
+        <Member type="Method">private string getControlName(int index)</Member>
+        <Member type="Method">private void updateBoardFromControl(TextBox textBox, int Value)</Member>
+        <Member type="Method">private void PrintCurrentBoard()</Member>
+        <Member type="Method">private void checkButtonClick(pbject sender, evenargs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HangManForm</Name>
+        <Access>Public</Access>
+        <Location left="68" top="360" />
+        <Size width="162" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int gamesWon = 0</Member>
+        <Member type="Field">private int gamesLost = 0</Member>
+        <Member type="Constructor">public HangManForm()</Member>
+        <Member type="Method">public void startnewgame()</Member>
+        <Member type="Method">public void buttnguessclick(object sender, eventargs e)</Member>
+        <Member type="Method">public void burronrestartclick(object sender, eventargs e)</Member>
+        <Member type="Method">public void updatedisplay()</Member>
+        <Member type="Method">public void updatehangmanimage(int stage)</Member>
+        <Member type="Method">public void updateguessedletters()</Member>
+        <Member type="Method">public void checkgamestatus()</Member>
+        <Member type="Method">protected override string getformattedscore()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HangManData</Name>
+        <Access>Public</Access>
+        <Location left="74" top="663" />
+        <Size width="162" height="349" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private list&lt;string&gt; words = new List&lt;string&gt;()</Member>
+        <Member type="Field">private string selectedWord</Member>
+        <Member type="Field">private char displayWord</Member>
+        <Member type="Field">private List&lt;char&gt; guessedLetters = new List&lt;char&gt;()</Member>
+        <Member type="Field">private int incorrctGuesses = 0</Member>
+        <Member type="Field">private const int maxincorrectguesses = 6</Member>
+        <Member type="Field">public string DisplayWord = new string(displayWord)</Member>
+        <Member type="Field">public int IncorectGuesses = incorrectGuesses</Member>
+        <Member type="Field">public int MaxIncorrectGuesses = maxIncorrectGuesses</Member>
+        <Member type="Field">public bool IsGameOver = incorrectGuesses = maxIncorrectGuesses</Member>
+        <Member type="Field">public bool IsGameWon = DisplayWord = selectedWord</Member>
+        <Member type="Field">public string SelectedWord = selectedWord</Member>
+        <Member type="Field">public List&lt;char&gt; GuessedLetters = guessedLetters</Member>
+        <Member type="Method">public void StartNewGame()</Member>
+        <Member type="Method">public void LoadWordsFromFile()</Member>
+        <Member type="Method">public bool ProcessGuess(char guess)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>tictactoeData</Name>
+        <Access>Public</Access>
+        <Location left="638" top="765" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public static int[] arr = new int[9]</Member>
+        <Member type="Field">public static int turn = 1</Member>
+        <Member type="Field">public static int turnNum = 0</Member>
+        <Member type="Field">public static bool gameover = false</Member>
+        <Member type="Field">Random random = new Random()</Member>
+        <Member type="Field">public int random1</Member>
+        <Member type="Method">public void X(int x)</Member>
+        <Member type="Method">public void O()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SudokuData</Name>
+        <Access>Public</Access>
+        <Location left="846" top="697" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private list&lt;string&gt; puzzles = new list&lt;string&gt;()</Member>
+        <Member type="Field">private random rand = new Random()</Member>
+        <Member type="Constructor">public SudokuData(string filePath)</Member>
+        <Member type="Method">private void LoadPuzzles(string filePath)</Member>
+        <Member type="Method">public string GetRandomPuzzle()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>GameBase</Name>
+        <Access>Public</Access>
+        <Location left="567" top="1126" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected Label scoreLabel</Member>
+        <Member type="Method">public void setScoreLaber(Label label)</Member>
+        <Member type="Method">public void updateScoreDisplay()</Member>
+        <Member type="Method">protected abstract string getFormattedScore()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>_2048Data</Name>
+        <Access>Public</Access>
+        <Location left="467" top="360" />
+        <Size width="162" height="672" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private GameState currentGameState = GameState.eGame</Member>
+        <Member type="Field">private int[][] iBoard</Member>
+        <Member type="Field">private int iScore = 0, iBest = 0</Member>
+        <Member type="Field">private List&lt;Bitmap&gt; oBitmap = new List&lt;Bitmap&gt;()</Member>
+        <Member type="Field">private Font fFontS2 = new Font("Clear Sans", 10, FontStyle.Bold)</Member>
+        <Member type="Field">private Font fFontS = new Font("Clear Sans", 12, FontStyle.Bold)</Member>
+        <Member type="Field">private Font fFont = new Font("Clear Sans", 22, FontStyle.Bold)</Member>
+        <Member type="Field">private SizeF stringSize = new SizeF()</Member>
+        <Member type="Field">private int addNum = 2</Member>
+        <Member type="Field">private Random oR = new Random()</Member>
+        <Member type="Field">private Boolean gameOver = false</Member>
+        <Member type="Field">private Rectangle rRect</Member>
+        <Member type="Field">private int iNewX</Member>
+        <Member type="Field">private int iNewY</Member>
+        <Member type="Field">public Boolean kTOP</Member>
+        <Member type="Field">public Boolean kRIGHT</Member>
+        <Member type="Field">public Boolean kBOTTOM</Member>
+        <Member type="Field">public Boolean kLEFT</Member>
+        <Member type="Field">public Boolean bRender = true</Member>
+        <Member type="Constructor">public _2048Data()</Member>
+        <Member type="Method">public void Update()</Member>
+        <Member type="Method">public void Draw(Graphics g)</Member>
+        <Member type="Method">public void DrawGame(Graphics g)</Member>
+        <Member type="Method">public void GameOverDraw(Graphics g)</Member>
+        <Member type="Method">public void DrawAbout(Graphics g)</Member>
+        <Member type="Method">public void DrawTextCenterX(Graphics g, String sText, Font nFont, SolidBrush nSolidBrush, int X, int Y)</Member>
+        <Member type="Method">public void DrawTextCenterXWS(Graphics g, String sText, Font nFont, SolidBrush nSolidBrush, SolidBrush nSolidBrush2, int X, int Y)</Member>
+        <Member type="Method">public void DrawTextCenterWS(Graphics g, String sText, Font nFont, SolidBrush nSolidBrush, SolidBrush nSolidBrush2, int X, int Y)</Member>
+        <Member type="Method">public void moveBoard(Direction nDirection)</Member>
+        <Member type="Method">public void NewMethod()</Member>
+        <Member type="Method">public void checkGameOver()</Member>
+        <Member type="Method">public int getBitmapID(int iNum)</Member>
+        <Member type="Method">public void checkButton(int nXPos, int nYPos)</Member>
+        <Member type="Method">public void actionButton(int iButtonID)</Member>
+        <Member type="Method">private void resetGameData()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Button</Name>
+        <Access>Public</Access>
+        <Location left="273" top="681" />
+        <Size width="162" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int iXPos</Member>
+        <Member type="Field">private int iYPos</Member>
+        <Member type="Field">private int iWidth</Member>
+        <Member type="Field">private int iHeight</Member>
+        <Member type="Field">private int imgID</Member>
+        <Member type="Field">private Boolean clickable</Member>
+        <Member type="Constructor">public Button(int iXPos, int iYPos, int iWidth, int iHeight, int imgID, Boolean clickable)</Member>
+        <Member type="Method">public void Draw(Graphics g, Bitmap oB)</Member>
+        <Member type="Method">public int getXpos()</Member>
+        <Member type="Method">public int getYPos()</Member>
+        <Member type="Method">public int getWidth()</Member>
+        <Member type="Method">public int getHeight()</Member>
+        <Member type="Method">public int getIMGID()</Member>
+        <Member type="Method">public Boolean getClickable()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CFG</Name>
+        <Access>Public</Access>
+        <Location left="273" top="1006" />
+        <Size width="162" height="247" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static CFG oCFG</Member>
+        <Member type="Field">private const int iWidth = 396</Member>
+        <Member type="Field">private static long lTime = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond</Member>
+        <Member type="Field">private const int iHeight = 640</Member>
+        <Member type="Method">public static CFG getInstance()</Member>
+        <Member type="Method">public int getWidth()</Member>
+        <Member type="Method">public int getHeight()</Member>
+        <Member type="Method">public long getCurrentTime()</Member>
+        <Member type="Method">public long getTime()</Member>
+        <Member type="Method">public void setTime(long lTime)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Containers />
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>355</X>
+          <Y>335</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>714</X>
+          <Y>335</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>644</X>
+          <Y>204</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>929</X>
+          <Y>335</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="0" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>151</X>
+          <Y>328</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="4" second="5">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>153</X>
+          <Y>638</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="2" second="6">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>711</X>
+          <Y>738</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="7">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>21</X>
+          <Y>547</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>520</X>
+          <Y>1269</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>820</X>
+          <Y>688</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>765</X>
+          <Y>1247</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1037</X>
+          <Y>535</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>754</X>
+          <Y>1249</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="1" second="9">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>460</X>
+          <Y>500</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="10">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>352</X>
+          <Y>651</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="11">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>460</X>
+          <Y>578</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>460</X>
+          <Y>1133</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
